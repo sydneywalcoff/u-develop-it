@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 db.query(`SELECT * FROM candidates`, (err, rows) => {
-    // console.log(rows);
+    console.log(rows);
 });
 
 // GET all candidates
@@ -96,7 +96,7 @@ app.post('/api/candidate', ({body}, res) => {
     }
     const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected)
     VALUES(?,?,?,?)`;
-    const params = [1, 'Ronald', 'Firbank', 1];
+    const params = [2, 'Virginia', 'Woolf', 1];
 
     db.query(sql, params, (err, result) => {
         if(err) {
